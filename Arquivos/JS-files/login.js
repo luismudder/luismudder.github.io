@@ -8,9 +8,11 @@ function mobile() {
  || navigator.userAgent.match(/Windows Phone/i)
  ){
    document.getElementById('css').href = 'Archives/CSS-files/login.mobile.css'
+   console.log('mobile')
   }
  else {
    document.getElementById('css').href = 'Archives/CSS-files/login.css'
+   console.log('pc')
   }
 }
 mobile()
