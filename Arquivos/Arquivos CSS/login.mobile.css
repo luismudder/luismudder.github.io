@@ -1,0 +1,50 @@
+:root{
+	/*themes*/
+		--box: black;
+		--theme: purple;
+		--background: black;
+
+	/*sizes-styles*/
+		/*box*/
+			--box-padding: 2%;
+			--box-width: 80%;
+			--box-height: 15vh;
+			--box-border-1: 0.1vh solid var(--theme);
+			--box-border-2: 0.8vh solid var(--theme);
+			--box-radius: 2vh;
+			--box-shadow: 0px 0px 8vh 1vh var(--theme);
+		/*form*/
+			--form-radius: 0px 1vw 0px 0px;
+		/*input*/
+			--input-margin: 0.5vw;
+			--input-padding: 1.5vw;
+			--input-width: calc(100% - 2vw);
+			--input-height: 3vh;
+			--input-font: 1.5vh;
+			--input-border: 0.1vw solid var(--theme);
+			--input-border-hover: 0.2vw solid var(--theme);
+			--input-radius: 0.5vh;
+		/*button*/
+			--button-width: 20%;
+			--button-height: 3vh;
+			--button-font: 0.8vw;
+			--button-margin: 2vh;
+			--button-radius: 2vw 0vw 0vw 2vw;
+	
+	/*position*/
+		/*box*/
+			--box-positon: fixed;
+			--box-top: 30vh;
+			--box-left: 9.5vw;	
+		/*button*/
+			--button-right: 0px;
+			--button-bottom: 0px;
+}
+body{background-color: var(--background);margin: 0px;}
+#box{display: inline-block;background-color: var(--box);padding: var(--box-padding);width: var(--box-width);height: var(--box-height);border: var(--box-border-1);border-right: var(--box-border-2);border-top: var(--box-border-2);border-radius: var(--box-radius);box-shadow: var(--box-shadow);position: var(--box-positon);top: var(--box-top);left: var(--box-left);}
+#window{border-radius: var(--form-radius);border-right: var(--box-border-1);position: relative;height: 100%;}
+input{width: var(--input-width);height: var(--input-height);margin-top: var(--input-margin);color: var(--theme);background-color: transparent;border: var(--input-border);border-radius: var(--input-radius);padding-left: var(--input-padding);font-size: var(--input-font);}
+input:hover{border: var(--input-border-hover);}
+input::placeholder{color: var(--theme);}
+#button{width: var(--button-width);height: var(--button-height);position: absolute;bottom: var(--button-bottom);right: var(--button-right);padding: 0px;transition: all 0.5s;border-radius: var(--button-radius);background-color: var(--theme);border: none;margin-top: var(--button-margin);font-size: var(--button-font);}
+#button:hover{width: 25%;}
