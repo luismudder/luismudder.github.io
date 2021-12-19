@@ -1,20 +1,81 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 <head>
 	<meta charset="utf-8">
-	<!-- <meta http-equiv="refresh" content="1"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link id="css" rel="stylesheet" type="text/css" href="Archives/CSS-files/login.css">
-	<title>Login</title>
+	<style type="text/css">
+		body{margin: 0px;}
+		person{
+			position: absolute;
+			display: inline-block;
+			width: 5%;
+			height: 5%;
+			background-color: red;
+			transition: left 0.5s,top 0.5s;
+		}
+		wall1{
+			position: absolute;
+			left: 30%;
+			display: inline-block;
+			width: 5%;
+			height: 30%;
+			background-color: green;
+		}
+	</style>
+	<title></title>
 </head>
-<body>
-	<div id="box">
-		<form id="window">
-			<input placeholder="name" type="text" name="name">
-			<input placeholder="password" type="password" name="password">
-			<button id="button" type="submit">Sign in</button>
-		</form>
-	</div>
-	<script src="Archives/JS-files/login.js" type="text/javascript"></script>
+<body onkeyup="KeyFunction(event)">
+	<person></person>
+	<wall1></wall1>
+	<script type="text/javascript">
+		const Person = document.getElementsByTagName("person")[0]
+		Person.style.left = "0px"
+		Person.style.top = "0px"
+		function KeyFunction(Key){
+			switch(Key.code){
+				case "KeyW":
+					PersonUp()
+					break
+				case "KeyA":
+					PersonLeft()
+					break
+				case "KeyS":
+					PersonDown()
+					break
+				case "KeyD":
+					PersonRight()
+					break
+			}
+		}
+		function PersonRight(){
+			Person.style.left = parseInt(Person.style.left.slice(0, Person.style.left.length-2))+5+"vw"
+			if(parseInt(Person.style.left.slice(0, Person.style.left.length-2)) < 25 & parseInt(Person.style.top.slice(0, Person.style.top.length-2)) < 25){
+				Person.style.left = parseInt(Person.style.left.slice(0, Person.style.left.length-2))+25-parseInt(Person.style.left.slice(0, Person.style.left.length-2))+'vw'
+			}else{
+				
+			}
+			if(parseInt(Person.style.left.slice(0, Person.style.left.length-2)) > 95){
+				Person.style.left = "95vw"
+			}
+		}
+		function PersonLeft(){
+			Person.style.left = Person.style.left.slice(0, Person.style.left.length-2)-5+"vw"
+			if(parseInt(Person.style.left.slice(0, Person.style.left.length-2)) < 0){
+				Person.style.left = "0vw"
+			}
+		}
+		function PersonUp(){
+			Person.style.top = Person.style.top.slice(0, Person.style.top.length-2)-5+"vh"
+			if(parseInt(Person.style.top.slice(0, Person.style.top.length-2)) < 0){
+				Person.style.top = "0vh"
+			}
+		}
+		function PersonDown(){
+			Person.style.top = parseInt(Person.style.top.slice(0, Person.style.top.length-2))+5+'vh'
+			if(parseInt(Person.style.top.slice(0, Person.style.top.length-2)) > 95){
+				Person.style.top = "95vh"
+			}
+		}
+	</script>
 </body>
 </html>
